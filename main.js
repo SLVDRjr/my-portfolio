@@ -6,29 +6,38 @@ bars.addEventListener('click', () => {
   const visibility = headerNav.getAttribute('data-visible')
 
   if(visibility === 'false'){
-    headerNav.setAttribute('data-visible', true)
+    setTimeout(function() {
+      headerNav.setAttribute('data-visible', true)
+    }, 300)
+    
     bars.setAttribute('area-expanded', true)
-    containerOverlay.style.display = 'block'
+    containerOverlay.setAttribute('area-expanded', true)
   }else{
     headerNav.setAttribute('data-visible', false)
     bars.setAttribute('area-expanded', false)
-    containerOverlay.style.display = 'none'
+    setTimeout(function() {
+      containerOverlay.setAttribute('area-expanded', false)
+    }, 300)
   }
 })
 
 window.addEventListener('click', e => {
   if(e.target === containerOverlay){
-    containerOverlay.style.display = 'none'
     headerNav.setAttribute('data-visible', false)
     bars.setAttribute('area-expanded', false)
+    setTimeout(function() {
+      containerOverlay.setAttribute('area-expanded', false)
+    }, 300)
   }
 })
 
 window.addEventListener('resize', () => {
   if(window.innerWidth > 768){
-    containerOverlay.style.display = 'none'
     headerNav.setAttribute('data-visible', false)
     bars.setAttribute('area-expanded', false)
+    setTimeout(function() {
+      containerOverlay.setAttribute('area-expanded', false)
+    }, 300)
   }
 })
 
@@ -150,73 +159,87 @@ const postDetails = e => {
 
 contactForm.addEventListener('submit', postDetails)
 
-/*
+
 // Form Validation
 const nameInput = document.querySelector('#name')
 const emailInput = document.querySelector('#email')
 const messageInput = document.querySelector('#message')
 
+const nameError = document.querySelector('.name-error')
+const emailError = document.querySelector('.email-error')
+const messageError = document.querySelector('.message-error')
+
 const submitBtn = document.querySelector('#submit')
 
-const validateName = () => {
-  if(!nameInput.value){
-    nameInput.style.borderColor = "red"
-    // nameError.innerHTML = 'Name is required'
-    return false
+// event listeners
+nameInput.addEventListener('keyup', validateName)
+emailInput.addEventListener('keyup', validateEmail)
+messageInput.addEventListener('keyup', validateMessage)
+
+  function validateName(e){
+    if(!nameInput.value){ 
+      e.preventDefault()
+      nameInput.style.borderColor = "red"
+      nameError.innerHTML = '<i class="fa-solid fa-exclamation"></i>'
+      return false
+    }else{
+      nameInput.style.borderColor = "green"
+      nameError.innerHTML = ''
+      return true
+    }
   }
-  nameInput.style.borderColor = "green"
-  return true
-}
-
-const validateEmail = () => {
-  if(!emailInput.value){
-    emailInput.style.borderColor = "red"
-    // document.querySelector('.email-error').innerHTML = 'Email is required'
-    return false
-  }
-
-  if(!emailInput.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
-    emailInput.style.borderColor = "red"
-    // document.querySelector('.email-error').innerHTML = 'Invalid Email'
-    return false
-  }
-  emailInput.style.borderColor = "green"
-  return true
-}
-
-const validateMessage = () => {
-  if(!messageInput.value){
-    messageInput.style.borderColor = "red"
-    // document.querySelector('.message-error').innerHTML = 'Please write a message'
-    return false
-  }
-  messageInput.style.borderColor = "green"
-  return true
-}
-
-submitBtn.addEventListener('click', () => {
-  validateEmail()
-  validateName()
-  validateMessage()
-})
-*/
-
-// const nameInput = document.querySelector('#name')
-// const emailInput = document.querySelector('#email')
-// const messageInput = document.querySelector('#message')
-
-// const submitBtn = document.querySelector('#submit')
-
-// const validity = () => {
-//   const isValidEmail = emailInput.checkValidity()
-//   const isValidName = nameInput.checkValidity()
-//   const isValidMessage = nameInput.checkValidity()
   
-//   if(isValidEmail && isValidName && isValidMessage){
-//     nameInput.value = ''
-//     emailInput.value = ''
-//     messageInput.value = ''
-//   }
-// }
+  function validateEmail(e){
+    if(!emailInput.value){
+      e.preventDefault()
+      emailInput.style.borderColor = "red"
+      emailError.innerHTML = '<i class="fa-solid fa-exclamation"></i>'
+      return false
+    }
+  
+    if(!emailInput.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
+      e.preventDefault()
+      emailInput.style.borderColor = "red"
+      emailError.innerHTML = '<i class="fa-solid fa-exclamation"></i>'
+      return false
+    }else{
+      emailInput.style.borderColor = "green"
+      emailError.innerHTML = ''
+      return true
+    }
+  }
+  
+  function validateMessage(e){
+    if(!messageInput.value){
+      e.preventDefault()
+      messageInput.style.borderColor = "red"
+      messageError.innerHTML = '<i class="fa-solid fa-exclamation"></i>'
+      return false
+    }else{
+      messageInput.style.borderColor = "green"
+      messageError.innerHTML = ''
+      return true
+    }
+  }
 
-// submitBtn.addEventListener('click', validity)
+  function reset(){
+    nameInput.value = ''
+    emailInput.value = ''
+    messageInput.value = ''
+    nameInput.style.borderColor = ''
+    emailInput.style.borderColor = ''
+    messageInput.style.borderColor = ''
+  }
+
+  contactForm.addEventListener('submit', function() {
+    const isValidName = validateName()
+    const isValidEmail = validateEmail()
+    const isValidMessage = validateMessage()
+
+    if(isValidName && isValidEmail && isValidMessage){
+      reset()
+    }
+  })
+   
+  
+
