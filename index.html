@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Raleway:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container-overlay" id="container-overlay"></div>
+      <div class="header-container">
+        <header>
+          <a href="index.html" class="logo" id="logo">SLVDR</a>
+
+          <button id="bars" class="bars" aria-expanded="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+          <nav id="header-nav" data-visible="false">
+            <ul class="nav-links">
+              <li>
+                <a href="#about"><i class="fa-solid fa-user icon"></i>About</a>
+              </li>
+              <li>
+                <a href="#portfolio"
+                  ><i class="fa-solid fa-briefcase icon"></i>Work</a
+                >
+              </li>
+              <li>
+                <a href="#contact"
+                  ><i class="fa-solid fa-phone icon"></i>Contact</a
+                >
+              </li>
+            </ul>
+            <ul class="social-icons">
+              <li>
+                <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="fa-brands fa-github"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+
+      <div class="hero-container">
+        <section id="hero" class="hero">
+          <div id="hero-img" class="hero-img slide-content">
+            <img src="profiles/profile-1.png" alt="" />
+          </div>
+          <div id="hero-content" class="content slide-content">
+            <p class="intro">Hello, I'm William</p>
+            <h1>An Aspiring <br />Front-End Developer</h1>
+            <p>I code simple things and I love what I do.</p>
+            <a href="#portfolio">
+              SEE MY WORK
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <main>
+        <section class="skills">
+          <div class="content">
+            <div class="item">
+              <div class="skills-icon-container">
+                <i class="fa-brands fa-html5 skills-icon"></i>
+                <span class="skills-tooltips">HTML</span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="skills-icon-container">
+                <i class="fa-brands fa-css3-alt skills-icon"></i>
+                <span class="skills-tooltips">CSS</span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="skills-icon-container">
+                <i class="fa-brands fa-js skills-icon"></i>
+                <span class="skills-tooltips">JAVASCRIPT</span>
+              </div>
+            </div>
+            <div class="item">
+              <div class="skills-icon-container">
+                <i class="fa-brands fa-php skills-icon"></i>
+                <span class="skills-tooltips">PHP</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="about-container">
+          <section id="about" class="about">
+            <div class="title-container">
+              <h2>ABOUT</h2>
+              <div class="title-bg">ABOUT</div>
+            </div>
+            <div id="about-content" class="content">
+              <div id="about-info" class="about-info slide-content">
+                <p>
+                  My name is William, an aspiring front-end developer. I am
+                  currently learning and diving deeper into web development.
+                </p>
+                <p>
+                  I believe that effort gets things done and patience sees them
+                  through. Both are crucial to success.
+                </p>
+                <div class="about-social">
+                  <span
+                    ><a href=""><i class="fa-brands fa-facebook-f"></i></a
+                  ></span>
+                  <span
+                    ><a href=""><i class="fa-brands fa-github"></i></a
+                  ></span>
+                </div>
+              </div>
+              <div id="about-img" class="about-img slide-content">
+                <img src="profiles/profile-2.jpg" alt="" />
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section id="portfolio" class="portfolio">
+          <div class="title-container">
+            <h2>PORTFOLIO</h2>
+            <div class="title-bg">PORTFOLIO</div>
+          </div>
+          <div id="portfolio-content" class="content">
+            <div class="project-container slide-content">
+              <div class="project">
+                <div class="project-img">
+                  <img src="img/img-1.jpg" alt="" />
+                  <div class="project-info">
+                    <div>
+                      <h3>Project 1</h3>
+                      <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing
+                        elit. Nostrum deserunt, ipsam quod corrupti illo in
+                        nulla modi odio ipsum asperiores.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-tags">
+                  <span>JAVASCRIPT</span>
+                  <span>HTML</span>
+                  <span>CSS</span>
+                </div>
+                <button class="view-web">
+                  <i class="fa-solid fa-desktop"></i>Visit the site
+                </button>
+                <button class="view-code">
+                  <i class="fa-brands fa-github"></i>See source code
+                </button>
+              </div>
+            </div>
+            <div class="project-container slide-content">
+              <div class="project">
+                <div class="project-img">
+                  <img src="img/img-2.jpg" alt="" />
+                  <div class="project-info">
+                    <div>
+                      <h3>Project 2</h3>
+                      <p>
+                        Nostrum natus nobis cumque, laboriosam voluptates
+                        reiciendis illum molestias culpa blanditiis officia?
+                        Nesciunt nulla aliquam nihil ut!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-tags">
+                  <span>JAVASCRIPT</span>
+                  <span>HTML</span>
+                  <span>CSS</span>
+                </div>
+                <button class="view-web">
+                  <i class="fa-solid fa-desktop"></i>Visit the site
+                </button>
+                <button class="view-code">
+                  <i class="fa-brands fa-github"></i>See source code
+                </button>
+              </div>
+            </div>
+            <div class="project-container slide-content">
+              <div class="project">
+                <div class="project-img">
+                  <img src="img/img-3.jpg" alt="" />
+                  <div class="project-info">
+                    <div>
+                      <h3>Project 3</h3>
+                      <p>
+                        Explicabo recusandae error dolore dolorum, quasi eos
+                        tenetur nihil, porro non consectetur laborum, officia
+                        saepe alias officiis quibusdam.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-tags">
+                  <span>JAVASCRIPT</span>
+                  <span>HTML</span>
+                  <span>CSS</span>
+                </div>
+                <button class="view-web">
+                  <i class="fa-solid fa-desktop"></i>Visit the site
+                </button>
+                <button class="view-code">
+                  <i class="fa-brands fa-github"></i>See source code
+                </button>
+              </div>
+            </div>
+            <div class="project-container slide-content">
+              <div class="project">
+                <div class="project-img">
+                  <img src="img/img-4.jpg" alt="" />
+                  <div class="project-info">
+                    <div>
+                      <h3>Project 4</h3>
+                      <p>
+                        Cupiditate laborum deleniti perferendis quos mollitia
+                        sapiente sequi accusantium minus dolorum nisi voluptas
+                        distinctio.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="project-tags">
+                  <span>JAVASCRIPT</span>
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>PHP</span>
+                </div>
+                <button class="view-web">
+                  <i class="fa-solid fa-desktop"></i>Visit the site
+                </button>
+                <button class="view-code">
+                  <i class="fa-brands fa-github"></i>See source code
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- <div class="aside-container">
+      <aside>
+        <div>
+          <p class="intro">Let's Work Together On Your Next Project!</p>
+          <button>Hire Me Now!</button>
+        </div>
+      </aside>
+    </div> -->
+
+      <div class="contact-container">
+        <section id="contact" class="contact">
+          <div class="title-container">
+            <h2>CONTACT</h2>
+            <div class="title-bg">CONTACT</div>
+          </div>
+          <div id="contact-content" class="content">
+            <form class="contact-form show" id="contact-form">
+              <input id="name" type="text" placeholder="Name" />
+              <input id="email" type="email" placeholder="Email" />
+              <textarea
+                name="message"
+                id="message"
+                placeholder="Message"
+              ></textarea>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <footer>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <ul class="social-icons">
+          <li>
+            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-github"></i></a>
+          </li>
+        </ul>
+        <p>Copyright &copy; 2023 William Salvador Jr.</p>
+      </footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
