@@ -275,15 +275,37 @@
             <div class="title-bg">CONTACT</div>
           </div>
           <div id="contact-content" class="content">
-            <form class="contact-form show" id="contact-form">
-              <input id="name" type="text" placeholder="Name" />
-              <input id="email" type="email" placeholder="Email" />
-              <textarea
-                name="message"
-                id="message"
-                placeholder="Message"
-              ></textarea>
-              <button type="submit">Send</button>
+            <form method="POST" class="contact-form show" id="contact-form">
+              <div class="form-control">
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  required
+                />
+                <span class="name-error"></span>
+              </div>
+              <div class="form-control">
+                <input
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  required
+                />
+                <span class="email-error"></span>
+              </div>
+              <div class="form-control">
+                <textarea
+                  name="message"
+                  id="message"
+                  placeholder="Message"
+                  required
+                ></textarea>
+                <span class="message-error"></span>
+              </div>
+              <button id="submit">Send</button>
             </form>
           </div>
         </section>

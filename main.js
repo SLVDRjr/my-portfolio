@@ -122,7 +122,101 @@ const contactObserver = new IntersectionObserver(entries => {
 
 contactObserver.observe(document.querySelector('#contact-content'))
 
+// Form Submission
+const postDetails = e => {
+  e.preventDefault()
 
+  const name = document.querySelector('#name').value
+  const email = document.querySelector('#email').value
+  const message = document.querySelector('#message').value
 
+  const params = `name=${name}&email=${email}&message=${message}`
 
+  const xhr = new XMLHttpRequest()
 
+  xhr.open('POST', 'process.php', true)
+  xhr.setRequestHeader(
+    'Content-type',
+    'application/x-www-form-urlencoded'
+  )
+
+  xhr.onload = function() {
+    console.log(this.responseText)
+  }
+
+  xhr.send(params)
+
+}
+
+contactForm.addEventListener('submit', postDetails)
+
+/*
+// Form Validation
+const nameInput = document.querySelector('#name')
+const emailInput = document.querySelector('#email')
+const messageInput = document.querySelector('#message')
+
+const submitBtn = document.querySelector('#submit')
+
+const validateName = () => {
+  if(!nameInput.value){
+    nameInput.style.borderColor = "red"
+    // nameError.innerHTML = 'Name is required'
+    return false
+  }
+  nameInput.style.borderColor = "green"
+  return true
+}
+
+const validateEmail = () => {
+  if(!emailInput.value){
+    emailInput.style.borderColor = "red"
+    // document.querySelector('.email-error').innerHTML = 'Email is required'
+    return false
+  }
+
+  if(!emailInput.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
+    emailInput.style.borderColor = "red"
+    // document.querySelector('.email-error').innerHTML = 'Invalid Email'
+    return false
+  }
+  emailInput.style.borderColor = "green"
+  return true
+}
+
+const validateMessage = () => {
+  if(!messageInput.value){
+    messageInput.style.borderColor = "red"
+    // document.querySelector('.message-error').innerHTML = 'Please write a message'
+    return false
+  }
+  messageInput.style.borderColor = "green"
+  return true
+}
+
+submitBtn.addEventListener('click', () => {
+  validateEmail()
+  validateName()
+  validateMessage()
+})
+*/
+
+// const nameInput = document.querySelector('#name')
+// const emailInput = document.querySelector('#email')
+// const messageInput = document.querySelector('#message')
+
+// const submitBtn = document.querySelector('#submit')
+
+// const validity = () => {
+//   const isValidEmail = emailInput.checkValidity()
+//   const isValidName = nameInput.checkValidity()
+//   const isValidMessage = nameInput.checkValidity()
+  
+//   if(isValidEmail && isValidName && isValidMessage){
+//     nameInput.value = ''
+//     emailInput.value = ''
+//     messageInput.value = ''
+//   }
+// }
+
+// submitBtn.addEventListener('click', validity)
