@@ -150,7 +150,8 @@ const postDetails = e => {
   )
 
   xhr.onload = function() {
-    console.log(this.responseText)
+    // console.log(this.responseText)
+    alert(this.responseText)
   }
 
   xhr.send(params)
@@ -250,6 +251,8 @@ messageInput.addEventListener('keyup', validateMessage)
       reset()
     }
   })
+
+
    
   
 
