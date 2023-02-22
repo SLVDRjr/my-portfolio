@@ -145,13 +145,22 @@ header {
 
 .bars span {
   display: block;
-  width: 25px;
+  width: 24px;
   height: 2px;
-  margin: 5px auto;
+  margin-left: auto;
+  margin-block: 5px;
   background-color: #222222;
   border-radius: 0.25rem;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+}
+
+.bars span:nth-child(2){
+  width: 18px;
+}
+
+.bars span:nth-child(3){
+  width: 10px;
 }
 
 .bars[area-expanded="true"] span:nth-child(2) {
@@ -164,6 +173,7 @@ header {
 
 .bars[area-expanded="true"] span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+  width: 24px;
 }
 
 .bars:hover .bar {
@@ -931,7 +941,7 @@ section.contact .content .contact-form.show {
 
 .name-error, .email-error, .message-error{
   font-size: 2rem;
-  color: red;
+  color: #ff0000;
   position: absolute;
   top: 0;
   right: -1rem;

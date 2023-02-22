@@ -179,11 +179,13 @@ messageInput.addEventListener('keyup', validateMessage)
   function validateName(e){
     if(!nameInput.value){ 
       e.preventDefault()
-      nameInput.style.borderColor = "red"
+      nameInput.style.borderColor = "#ff0000"
+      nameInput.style.boxShadow = "0 5px 8px #ff000090"
       nameError.innerHTML = '<i class="fa-solid fa-exclamation"></i>'
       return false
     }else{
-      nameInput.style.borderColor = "green"
+      nameInput.style.borderColor = "#008000"
+      nameInput.style.boxShadow = "0 5px 8px #00800090"
       nameError.innerHTML = ''
       return true
     }
@@ -192,18 +194,21 @@ messageInput.addEventListener('keyup', validateMessage)
   function validateEmail(e){
     if(!emailInput.value){
       e.preventDefault()
-      emailInput.style.borderColor = "red"
+      emailInput.style.borderColor = "#ff0000"
+      emailInput.style.boxShadow = "0 5px 8px #ff000090"
       emailError.innerHTML = '<i class="fa-solid fa-exclamation"></i>'
       return false
     }
   
     if(!emailInput.value.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)){
       e.preventDefault()
-      emailInput.style.borderColor = "red"
+      emailInput.style.borderColor = "#ff0000"
+      emailInput.style.boxShadow = "0 5px 8px #ff000090"
       emailError.innerHTML = '<i class="fa-solid fa-exclamation"></i>'
       return false
     }else{
-      emailInput.style.borderColor = "green"
+      emailInput.style.borderColor = "#008000"
+      emailInput.style.boxShadow = "0 5px 8px #00800090"
       emailError.innerHTML = ''
       return true
     }
@@ -212,11 +217,13 @@ messageInput.addEventListener('keyup', validateMessage)
   function validateMessage(e){
     if(!messageInput.value){
       e.preventDefault()
-      messageInput.style.borderColor = "red"
+      messageInput.style.borderColor = "#ff0000"
+      messageInput.style.boxShadow = "0 5px 8px #ff000090"
       messageError.innerHTML = '<i class="fa-solid fa-exclamation"></i>'
       return false
     }else{
       messageInput.style.borderColor = "green"
+      messageInput.style.boxShadow = "0 5px 8px #00800090"
       messageError.innerHTML = ''
       return true
     }
@@ -229,6 +236,9 @@ messageInput.addEventListener('keyup', validateMessage)
     nameInput.style.borderColor = ''
     emailInput.style.borderColor = ''
     messageInput.style.borderColor = ''
+    nameInput.style.boxShadow = "none"
+    emailInput.style.boxShadow = "none"
+    messageInput.style.boxShadow = "none"
   }
 
   contactForm.addEventListener('submit', function() {
